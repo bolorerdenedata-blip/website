@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from openpyxl import Workbook, load_workbook
 import os
 
@@ -43,6 +43,10 @@ def index():
         message = "✅ Бүртгэл амжилттай хийгдлээ"
 
     return render_template("index.html", message=message)
+
+@app.route("/download")
+def download():
+    return send_file(FILE_NAME, as_attachment=True, download_name="Register.xlsx")
 
 if __name__ == "__main__":
     app.run(debug=True)
