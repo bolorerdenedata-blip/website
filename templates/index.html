@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Бүртгэл</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Бүртгэлийн хуудас</h2>
+
+    <form method="POST">
+    <input type="text" name="merchant" placeholder="Мерчант дугаар" required>
+    <input type="text" name="lastname" placeholder="Овог" required>
+    <input type="text" name="firstname" placeholder="Нэр" required>
+    <input type="text" name="phone" placeholder="Утасны дугаар" required>
+    <input type="number" name="loan" placeholder="Хүссэн зээлийн хэмжээ" required>
+    <input type="number" name="score" placeholder="Скоринг хэмжээ" required>
+
+    <label for="approved">Батлагдсан эсэх</label>
+    <select name="approved" id="approved" required>
+        <option value="" disabled selected>Сонгоно уу</option>
+        <option value="Тийм">Тийм</option>
+        <option value="Үгүй">Үгүй</option>
+    </select>
+
+    <button type="submit">Бүртгэх</button>
+</form>
+
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
